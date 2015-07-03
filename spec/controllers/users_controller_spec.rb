@@ -6,14 +6,14 @@ describe UsersController do
 
   describe "GET 'index'" do
 
-    describe "for non-signed-in users" do
+    describe "for  non-signed-in users" do
       it "should deny access" do
         get :index
         response.should redirect_to(signin_path)
       end
     end
     
-    describe "for signed-in-users" do
+    describe "for all signed-in-users" do
 
       before(:each) do
         @user = test_sign_in(Factory(:user))
